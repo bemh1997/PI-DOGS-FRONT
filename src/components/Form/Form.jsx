@@ -61,7 +61,6 @@ const Form = () =>{
     event.preventDefault();
     dispatch(postDog(state));
     if (!Object.values(errors).length) {
-      navigate('/home'); 
       setState({
         imagen: "", 
         nombre: "", 
@@ -84,6 +83,7 @@ const Form = () =>{
         esperanzaMax: '', 
         temperamentos: []
       });
+      navigate('/home'); 
     }
   };
 
@@ -235,7 +235,7 @@ const Form = () =>{
                 value={state.esperanzaMax}
                 step="1"
                 className={style.input}
-                min="0"
+                min="1"
                 required
               />
               <span className={style.spanG}>Esperanza de vida máxima*</span>

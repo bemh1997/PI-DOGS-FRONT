@@ -15,7 +15,7 @@ export const CLEAR_STATE = 'CLEAR_STATE';
 
 export const getDogs = () => async (dispatch) => {
   try {
-    const response = await axios.get('http://localhost:3001/dogs/raza/all');
+    const response = await axios.get('/dogs/raza/all');
     dispatch({
       type: GET_DOGS,
       payload: response.data,
@@ -30,13 +30,13 @@ export const getDogsbyParamc = (param)=> async (dispatch)=>{
     var response 
     switch (param) {
       case 'api':
-        response = await axios.get('http://localhost:3001/dogs/raza/api');   
+        response = await axios.get('/dogs/raza/api');   
         break;
       case 'db':
-        response = await axios.get('http://localhost:3001/dogs/raza/db');
+        response = await axios.get('/dogs/raza/db');
         break;
       default:
-        response = await axios.get('http://localhost:3001/dogs/raza/all');
+        response = await axios.get('/dogs/raza/all');
         break;
     }
     dispatch({
@@ -50,7 +50,7 @@ export const getDogsbyParamc = (param)=> async (dispatch)=>{
 
 export const getDogById = (id) => async (dispatch) => {
   try {
-    const response = await axios.get(`http://localhost:3001/dogs/raza/search/${id}`);
+    const response = await axios.get(`/dogs/raza/search/${id}`);
     dispatch({
       type: GET_DOG_BY_ID,
       payload: response.data,
@@ -62,7 +62,7 @@ export const getDogById = (id) => async (dispatch) => {
 
 export const getTemps = () => async(dispatch)=>{
   try {
-    const response = await axios.get('http://localhost:3001/dogs/temp/all');
+    const response = await axios.get('/dogs/temp/all');
     dispatch({
       type: GET_TEMPS,
       payload: response.data,
@@ -75,7 +75,7 @@ export const getTemps = () => async(dispatch)=>{
 export const postDog = (state) => async()=>{
   try {
     console.log('Creando raza...-')
-    await axios.post("http://localhost:3001/dogs/raza/", state);    
+    await axios.post("/dogs/raza/", state);    
     alert("Raza creada exitosamente");
     }catch (error) {
       if (error.response) {
@@ -134,7 +134,7 @@ export const search = (arg) => async (dispatch) => {
 
     var endpoint;
     if (esUUID(arg) || esCadenaDeEnteros(arg)){
-      endpoint = `http://localhost:3001/dogs/raza/search/${arg}`;
+      endpoint = `/dogs/raza/search/${arg}`;
       const response = await axios.get(endpoint);
       const payload = [response.data];
       dispatch({
@@ -143,7 +143,7 @@ export const search = (arg) => async (dispatch) => {
       });
 
     } else {
-      endpoint = `http://localhost:3001/dogs/raza/search/?nombre=${arg}`;
+      endpoint = `/dogs/raza/search/?nombre=${arg}`;
       const response = await axios.get(endpoint);
       dispatch({
         type: GET_DOGS_SEARCH,
