@@ -15,7 +15,7 @@
 
 ## **⚠️ IMPORTANTE**
 
-Es necesario contar minimamente con la última versión estable de NodeJS y NPM. Asegúrate de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto. Actualmente las versiónes en este proyecto son:
+Actualmente las versiónes en este proyecto son:
 
 -  **Node**: 20.3.1
 -  **NPM**: 9.7.2
@@ -32,6 +32,8 @@ Es necesario contar minimamente con la última versión estable de NodeJS y NPM.
 
 ---
 <br />
+
+# **A continuación** se da a conocer los rubros que se siguieron para esta aplicación.
 
 ## **📖 ENUNCIADO GENERAL**
 
