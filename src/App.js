@@ -16,10 +16,16 @@ function App() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const login = async ()=> {
+  const login = async (userData)=> {
     try{
-      setAccess( true );
-      access && navigate('/home');
+    const { password } = userData;
+    const URL = '/dogs/login';
+    const query = `?&password=${password}` 
+    const { data } = await axios(URL + query);
+    const { access } = data;
+
+    setAccess( data );
+    access && navigate('/home');
     }catch(error){
       return {
           error: error.message,

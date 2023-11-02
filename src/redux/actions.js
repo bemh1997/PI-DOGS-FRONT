@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+export const LOGIN = 'LOGIN';
 export const GET_DOGS = 'GET_DOGS';
 export const GET_DOGS_SEARCH = 'GET_DOGS_SEARCH';
 export const FILTER_API_DB = 'FILTER_API_DB';
@@ -12,6 +13,24 @@ export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_BY_TEMP = 'FILTER_BY_TEMP';
 export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT'
 export const CLEAR_STATE = 'CLEAR_STATE';
+
+export const login = (password) => async (dispatch) => {
+  try{
+
+    const URL = '/dogs/login';
+    const query = `?password=${password}` 
+    const { data } = await axios(URL + query);
+    const { access } = data;
+
+    dispatch({
+      type: LOGIN,
+      payload: access,
+    })
+
+  }catch(error){
+    alert("Contraseña incorrecta");
+  }
+};
 
 export const getDogs = () => async (dispatch) => {
   try {

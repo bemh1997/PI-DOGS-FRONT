@@ -1,4 +1,5 @@
 import {
+  LOGIN,
   GET_DOGS,
   GET_DOGS_SEARCH,
   FILTER_API_DB,
@@ -13,6 +14,7 @@ import {
 } from "./actions";
 
 const initialState = {
+  access: null,
   listDogs: [],
   backupAllDogs:[],
   searches:[],
@@ -23,6 +25,11 @@ const initialState = {
 
 const reducer = ( state = initialState, action)=>{
   switch (action.type) {
+    case LOGIN:
+      return{
+        ...state,
+        access: action.payload,
+      }
     case GET_DOGS:
       return {
         ...state,
