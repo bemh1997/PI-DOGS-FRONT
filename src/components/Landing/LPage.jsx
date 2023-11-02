@@ -51,7 +51,7 @@ export default function Form({ login }) {
             Contactame via <a href="https://www.linkedin.com/in/bernal-mh/" style={{textDecoration:'none'}}>linkedin</a><br />
             para acceder al sitio.
           </p>
-          <div className={divPassword}>
+          <div className={style.divPassword}>
           <div className={style.inputContainer}>
             <input 
               name='password'
