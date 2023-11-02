@@ -9,6 +9,7 @@ import NavBar from './components/NavBar/NavBar';
 import Searches from './components/Searches/Searches';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 function App() {

@@ -23,7 +23,7 @@ export default function Form({ login }) {
       [evento.target.name] : evento.target.value
     }));
   }
-  const handleLogin = () => {
+  const handleLogin = (evento) => {
     evento.preventDefault();
     // Si no hay errores, despachamos la información al estado global
     if (!Object.values(errors).length) {
