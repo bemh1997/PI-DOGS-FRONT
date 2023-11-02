@@ -51,6 +51,7 @@ export default function Form({ login }) {
             Contactame via <a href="https://www.linkedin.com/in/bernal-mh/" style={{textDecoration:'none'}}>linkedin</a><br />
             para acceder al sitio.
           </p>
+          <div style={{width:'100%',height:'150px',display:'flex',flexDirection:'column',alignItems:'center',justifyItems:'center'}}>
           <div className={style.inputContainer}>
             <input 
               name='password'
@@ -61,8 +62,9 @@ export default function Form({ login }) {
               onChange={handleChange}
             /><br />
             <span className={style.span}>Contraseña para acceder al sitio*</span>
-            {errors.nombre && <span className={style.error}>{errors.nombre}</span>}
-          </div>
+          </div><br />
+          {errors.password && <span className={style.error}>{errors.password}</span>}
+          </div><br />
           <button className={style.submitL} onClick={handleLogin}>
             Entrar
           </button>
